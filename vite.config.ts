@@ -37,6 +37,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   return defineConfig({
     plugins: [
       vue(),
+      // 自动引入组件
       Components({
         resolvers: [
           AntDesignVueResolver(), // ant-design-vue
@@ -49,6 +50,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         include: [/\.vue$/, /\.vue\?vue/],
         dts: "src/components.d.ts",
       }),
+      // 自动引入vue、vue-router
       AutoImport({
         imports: ["vue", "vue-router"],
         dts: "src/auto-imports.d.ts",
@@ -64,7 +66,9 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         "@router": resolve(__dirname, "src/router"),
         "@hooks": resolve(__dirname, "src/hooks"),
         "@enums": resolve(__dirname, "src/enums"),
+        "@utils": resolve(__dirname, "src/utils"),
         "@views": resolve(__dirname, "src/views"),
+        "@types": resolve(__dirname, "src/types"),
       },
     },
     server: {
@@ -78,6 +82,19 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           target: "http://localhost:3100/",
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
+        },
+      },
+    },
+    // 配置less 全局变量
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            hack: `true; @import (reference) "${resolve(
+              "src/design/config.less"
+            )}";`,
+          },
+          javascriptEnabled: true,
         },
       },
     },

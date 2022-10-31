@@ -1,13 +1,12 @@
 <template>
-  <Layout.Content>
+  <a-layout-content>
     <div>
       <PageLayout />
     </div>
-  </Layout.Content>
+  </a-layout-content>
 </template>
 
 <script setup lang="ts">
-import { Layout } from "ant-design-vue"
 import PageLayout from "../page/index.vue"
 </script>
 

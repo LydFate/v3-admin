@@ -21,7 +21,9 @@
       "@router/*": ["src/router/*"],
       "@hooks/*": ["src/hooks/*"],
       "@enums/*": ["src/enums/*"],
-      "@views/*": ["src/views/*"]
+      "@utils/*": ["src/utils/*"],
+      "@views/*": ["src/views/*"],
+      "@types/*": ["src/types/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

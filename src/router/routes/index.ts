@@ -15,7 +15,7 @@ Object.keys(modules).forEach((key: any) => {
   const modList = Array.isArray(mod) ? [...mod] : [mod]
   routeModuleList.push(...modList)
 })
-console.log(routeModuleList)
+// console.log(routeModuleList)
 // 异步路由
 export const asyncRoutes = [...routeModuleList]
 

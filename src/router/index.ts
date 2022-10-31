@@ -11,7 +11,7 @@ const router = createRouter({
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
-console.log(router.getRoutes())
+// console.log(router.getRoutes())
 // 配置路由
 export function setupRouter(app: App<Element>) {
   app.use(router)

@@ -3,8 +3,8 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter
-console.log(router)
+// const router = useRouter
+// console.log(router)
 </script>
 
 <style lang="less" scoped></style>

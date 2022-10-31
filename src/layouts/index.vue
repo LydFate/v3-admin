@@ -1,17 +1,34 @@
 <template>
-  <Layout>
-    <a-layout-sider>Sider</a-layout-sider>
-    <Layout>
+  <a-layout class="jw-default-layout">
+    <Sider></Sider>
+    <a-layout>
       <Header />
       <Content />
-    </Layout>
-  </Layout>
+    </a-layout>
+  </a-layout>
 </template>
 
 <script setup lang="ts">
-import { Layout } from "ant-design-vue"
+import Sider from "./sider/index.vue"
 import Header from "./header/index.vue"
 import Content from "./content/index.vue"
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.jw-default-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  background-color: @content-bg;
+  flex-direction: row;
+
+  > .ant-layout {
+    min-height: 100%;
+  }
+
+  &-main {
+    width: 100%;
+    margin-left: 1px;
+  }
+}
+</style>
